@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!--Meta Tags-->
+  {% block meta %}{% endblock %}
+  <!--Styles-->
+  {% include "shared/styles.html" %}
+</head>
+
+<body>
+  <!--Loader-->
+  <!-- <div id="preloader">
+    <div class="loader">
+
+    </div>
+  </div> -->
+  <!--Header Section-->
+  {% include "shared/header.html" %}
+  <!--Sidenav Section-->
+  
+  <!--Content Section-->
+  {% block content %}{% endblock %}
+  <!--Footer Section-->
+  {% include "shared/footer.html" %}
+  <!--Scripts-->
+  {% include "shared/scripts.html" %}
+</body>
+
+</html>

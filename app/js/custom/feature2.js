@@ -1,0 +1,1 @@
+var feature2 = "this is feature 2 and not feature 1"; 

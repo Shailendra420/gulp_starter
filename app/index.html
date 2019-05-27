@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!--Meta Tags-->
+  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+  <!--Styles-->
+  <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+</head>
+
+<body>
+  <!--Loader-->
+  <!-- <div id="preloader">
+    <div class="loader">
+
+    </div>
+  </div> -->
+  <!--Header Section-->
+  <header id="header-section">
+    Header
+</header>
+  <!--Sidenav Section-->
+  
+  <!--Content Section-->
+  
+<div include="form-input-select()">
+    <select required>
+      <!--
+        This is how we can do "placeholder" options.
+        note: "required" attribute is on the select
+      -->
+      <option value=""
+              hidden
+      >Example Placeholder</option> 
+  
+      <!-- normal options -->
+      <option value="1">Option 1</option>
+      <option value="2">Option 2</option>
+      <option value="3">Option 3</option>
+      <option value="4">Option 4</option>
+      <option value="5">Option 5</option>
+    </select>
+  </div>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+  <div class="form-group template-checkbox">
+    <ul class="checkbox-buttons">
+      <li>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="template"
+                 id="horizontal" value="horizontal">
+          <span class="template-checkbox-icon">
+            <img src="images/Advertising _ Promotion Disable-01.svg"
+                                                                  class="disable-state">
+            <img src="images/Advertising _ Promotion Active-01.svg"
+                 class="active-state">
+            <label class="form-check-label" for="horizontal">
+              Advertising &amp; Promotion
+            </label>
+            <img src="images/auto_build_categories_selected.svg" class="checkbox-active">
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <!--Footer Section-->
+  <footer id="footer-section">
+    Footer
+</footer>
+  <!--Scripts-->
+  <script src="js/jquery.min.js" type="text/javascript"></script>
+<script src="js/app.js" type="text/javascript"></script>
+</body>
+
+</html>

@@ -1,0 +1,131 @@
+button {
+  color: blue;
+  background-color: white;
+  border: none; }
+
+[include*="form-input-select()"] {
+  color: #005BA6;
+  display: block;
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 16px;
+  margin-top: 9px;
+  margin-bottom: 15px;
+  width: 100%; }
+  [include*="form-input-select()"]::before, [include*="form-input-select()"]::after {
+    content: '';
+    display: block;
+    position: absolute;
+    pointer-events: none;
+    border: 1px solid transparent;
+    width: 0;
+    height: 0;
+    right: 16px; }
+  [include*="form-input-select()"]::before {
+    bottom: 55%;
+    border-width: 0 6.5px 8px 6.5px;
+    border-bottom-color: #D6D6D6; }
+  [include*="form-input-select()"]::after {
+    border-width: 8px 6.5px 0 6.5px;
+    border-top-color: #D6D6D6;
+    top: 55%; }
+  [include*="form-input-select()"]:hover select {
+    box-shadow: 0 2px 3px rgba(0, 91, 166, 0.1) inset;
+    border-color: #005BA6; }
+    [include*="form-input-select()"]:hover select:focus {
+      outline-color: transparent; }
+  [include*="form-input-select()"]:hover::before {
+    border-bottom-color: #005BA6; }
+  [include*="form-input-select()"]:hover::after {
+    border-top-color: #005BA6; }
+  [include*="form-input-select()"] select {
+    border: 3px solid #E6E6E6;
+    border-radius: 0;
+    font-weight: 400;
+    color: inherit;
+    padding: 11px 15px;
+    line-height: normal;
+    transition: border-color 0.2s ease, outline 0.2s ease; }
+    [include*="form-input-select()"] select:focus {
+      box-shadow: 0 3px 4px rgba(0, 91, 166, 0.3) inset;
+      outline: 3px solid #005BA6;
+      outline-offset: -3px; }
+    [include*="form-input-select()"] select[disabled], [include*="form-input-select()"] select:disabled {
+      opacity: 0.4;
+      cursor: not-allowed; }
+    [include*="form-input-select()"] select:not(:focus):invalid {
+      color: #C7C7C7; }
+
+.template-checkbox .checkbox-buttons {
+  margin-left: -55px;
+  margin-top: -55px; }
+  .template-checkbox .checkbox-buttons li {
+    display: inline-block;
+    margin-left: 55px;
+    margin-top: 55px;
+    vertical-align: middle; }
+    .template-checkbox .checkbox-buttons li:last-child {
+      margin-right: 0; }
+    .template-checkbox .checkbox-buttons li .form-check {
+      padding-left: 0px;
+      cursor: pointer;
+      position: relative; }
+      .template-checkbox .checkbox-buttons li .form-check .form-check-input {
+        width: 180px;
+        height: 160px;
+        background: #ffffff;
+        border: none;
+        -moz-border-radius: 4px !important;
+        -o-border-radius: 4px !important;
+        -ms-border-radius: 4px !important;
+        -webkit-border-radius: 4px !important;
+        border-radius: 4px !important;
+        margin: 0px;
+        opacity: 0;
+        cursor: pointer; }
+        .template-checkbox .checkbox-buttons li .form-check .form-check-input:checked + span {
+          border: solid 1px #5b70cc; }
+          .template-checkbox .checkbox-buttons li .form-check .form-check-input:checked + span label {
+            color: #5b70cc; }
+          .template-checkbox .checkbox-buttons li .form-check .form-check-input:checked + span .active-state {
+            display: block; }
+          .template-checkbox .checkbox-buttons li .form-check .form-check-input:checked + span .disable-state {
+            display: none; }
+          .template-checkbox .checkbox-buttons li .form-check .form-check-input:checked + span .checkbox-active {
+            opacity: 1; }
+      .template-checkbox .checkbox-buttons li .form-check .template-checkbox-icon {
+        width: 180px;
+        height: 160px;
+        padding: 15px;
+        background: #ffffff;
+        -moz-border-radius: 4px !important;
+        -o-border-radius: 4px !important;
+        -ms-border-radius: 4px !important;
+        -webkit-border-radius: 4px !important;
+        border-radius: 4px !important;
+        text-align: center;
+        display: block;
+        border: solid 1px transparent; }
+        .template-checkbox .checkbox-buttons li .form-check .template-checkbox-icon .icon-section {
+          height: 50px; }
+          .template-checkbox .checkbox-buttons li .form-check .template-checkbox-icon .icon-section img {
+            height: 700px; }
+        .template-checkbox .checkbox-buttons li .form-check .template-checkbox-icon .active-state {
+          display: none; }
+        .template-checkbox .checkbox-buttons li .form-check .template-checkbox-icon .checkbox-active {
+          width: 20px;
+          height: 20px;
+          display: block;
+          margin: auto;
+          margin-top: 20px;
+          opacity: 0; }
+      .template-checkbox .checkbox-buttons li .form-check label {
+        color: #f1f1f3;
+        font-size: 14px;
+        text-transform: capitalize;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 100%;
+        display: block;
+        margin-top: 5px; }

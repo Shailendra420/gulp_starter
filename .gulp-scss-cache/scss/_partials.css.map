@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAEA,MAAO;EACH,KAAK,EAAE,IAAI;EACX,gBAAgB,EAAE,KAAK;EACvB,MAAM,EAAE,IAAI",
+"sources": ["../../scss/layouts/base.scss"],
+"names": [],
+"file": "_partials.css"
+}

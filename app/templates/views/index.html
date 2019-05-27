@@ -1,0 +1,50 @@
+{% extends 'layout/layout.html' %}
+
+{% block meta %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+{% endblock %}
+{% block content %}
+<div include="form-input-select()">
+    <select required>
+      <!--
+        This is how we can do "placeholder" options.
+        note: "required" attribute is on the select
+      -->
+      <option value=""
+              hidden
+      >Example Placeholder</option> 
+  
+      <!-- normal options -->
+      <option value="1">Option 1</option>
+      <option value="2">Option 2</option>
+      <option value="3">Option 3</option>
+      <option value="4">Option 4</option>
+      <option value="5">Option 5</option>
+    </select>
+  </div>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+  <div class="form-group template-checkbox">
+    <ul class="checkbox-buttons">
+      <li>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="template"
+                 id="horizontal" value="horizontal">
+          <span class="template-checkbox-icon">
+            <img src="images/Advertising _ Promotion Disable-01.svg"
+                                                                  class="disable-state">
+            <img src="images/Advertising _ Promotion Active-01.svg"
+                 class="active-state">
+            <label class="form-check-label" for="horizontal">
+              Advertising &amp; Promotion
+            </label>
+            <img src="images/auto_build_categories_selected.svg" class="checkbox-active">
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+{% endblock %}

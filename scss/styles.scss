@@ -1,0 +1,230 @@
+@import 'partials';
+
+// a {
+//     text-decoration: none;
+// }
+// ----------------------- Index page style -------------------
+// h1 {
+//     color: yellow;
+//     background-color: brown;
+// }
+// p {
+//     color: blue;
+// }
+// h2 {
+//     padding: 5px;
+//     color: green;
+//     background-color: black;
+// }
+
+@mixin form-input-select(){
+    // @include _select-form-reset;
+    color: $demo-blue;
+    display: block;
+    border-radius: 0;
+    box-shadow: none;
+    font-size: 16px;
+    // padding: 11px 15px;
+    margin-top: 9px;
+    margin-bottom: 15px;
+    width: 100%;
+  
+    &::before,
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      pointer-events: none; // Arrow clickable in some browsers
+  
+      // triangle set up
+      border: 1px solid transparent; // reset all borders
+      width: 0;
+      height: 0;
+      right: 16px;
+    }
+  
+    // top arrow
+    &::before {
+      bottom: 55%;
+      border-width: 0 6.5px 8px 6.5px;
+      border-bottom-color: $demo-gray;
+    }
+  
+    // bottom arrow
+    &::after {
+      border-width: 8px 6.5px 0 6.5px;
+      border-top-color: $demo-gray;
+      top: 55%;
+    }
+    
+    // firefox is outside the div
+    // @-moz-document url-prefix() {
+    //   border-right: $border-width solid $demo-border;
+      
+    //   &:hover {
+    //     border-right: $border-width solid $demo-blue;
+    //   }
+    // }
+  
+    &:hover {
+  
+      select {
+        box-shadow: 0 2px 3px rgba($demo-blue, 0.1) inset;
+        border-color: $demo-blue;
+  
+        // outline is critical but when we are hovering the div has the border already.
+        &:focus {
+          outline-color: transparent;
+        }
+        
+      }
+  
+      &::before {
+        border-bottom-color: $demo-blue;
+      }
+      &::after {
+        border-top-color: $demo-blue;
+      }
+  
+    }
+  
+    // Make sure you set all padding, borders on this select and not the parent div.
+    // this is mainly for :focus and tabbing.
+  
+    select {
+      border: $border-width solid $demo-border;
+      border-radius: 0;
+      font-weight: 400;
+      color: inherit;
+      padding: 11px 15px;
+      line-height: normal;
+      transition: border-color 0.2s ease,
+                  outline 0.2s ease;
+  
+  
+      // we really need this for the tabbers
+      // causes double borders though
+      &:focus {
+        box-shadow: 0 3px 4px rgba($demo-blue, 0.3) inset;
+        // outline is critical for usability
+        outline: $border-width solid $demo-blue;
+        outline-offset: -#{$border-width}; //offset vs width
+      }
+  
+      &[disabled], &:disabled{
+        opacity: 0.4;
+        cursor: not-allowed;
+      }
+  
+      // we use invalid like a placeholder
+      // 2019-03-05 added not selector for firefox and ie
+      &:not(:focus):invalid {
+        color: $demo-placeholder;
+      }
+  
+    }
+  }
+  
+  // Show the function
+  [include*="form-input-select()"] {
+    @include form-input-select();
+  }
+
+  // custom checkbox
+  $base-padding-margin: 5px;
+$white: #ffffff;
+$primary-color: #5b70cc;
+$light-gray1: #f1f1f3;
+$base-font: 12px;
+// Border Radius
+@mixin border-radius($radius) {
+  -moz-border-radius: $radius !important;
+    -o-border-radius: $radius !important;
+   -ms-border-radius: $radius !important;
+-webkit-border-radius: $radius !important;
+      border-radius: $radius !important;
+}
+.template-checkbox{
+  .checkbox-buttons{
+    margin-left: -$base-padding-margin * 11;
+    margin-top: -$base-padding-margin * 11;
+    li{
+      display: inline-block;
+      margin-left: $base-padding-margin * 11;
+      margin-top: $base-padding-margin * 11;
+      vertical-align: middle;
+      &:last-child{
+        margin-right: 0;
+      }
+    .form-check{
+      padding-left: $base-padding-margin - 5;
+      cursor: pointer;
+      position: relative;
+      
+      .form-check-input{
+        width: 180px;
+        height: 160px;
+        background: $white;
+        border: none;
+        @include border-radius(4px);
+        margin: $base-padding-margin - 5;
+        opacity: 0;
+        cursor: pointer;
+        &:checked + span{
+          border: solid 1px $primary-color;
+          label{
+            color: $primary-color;
+          }
+          .active-state{
+            display: block;
+          }
+          .disable-state{
+            display: none;
+          }
+          .checkbox-active{
+            opacity: 1;
+          }
+        }
+      }
+      .template-checkbox-icon{
+        width: 180px;
+        height: 160px;
+        padding: $base-padding-margin * 3;
+        background: $white;
+        @include border-radius(4px);
+        text-align: center;
+        display: block;
+        border: solid 1px transparent;
+        .icon-section{
+          height: 50px;
+          img{
+            height: 700px;
+          }
+        }
+        .active-state{
+          display: none;
+        }
+        .checkbox-active{
+          width: 20px;
+          height: 20px;
+          display: block;
+          margin: auto;
+          margin-top: $base-padding-margin * 4;
+          opacity: 0;
+        }
+      }
+      label{
+        color: $light-gray1;
+        font-size: $base-font + 2;
+        text-transform: capitalize;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 100%;
+        display: block;
+        margin-top: $base-padding-margin;
+      }
+    }
+  }
+  }
+}
